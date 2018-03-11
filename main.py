@@ -17,14 +17,7 @@ OneLogin_Secret_Id = Config.get('Settings', 'OneLogin_Secret_Id')
 
 sslverification = True
 
-domains =[
-    "everbridge.com", 
-    "nixle.com",
-    "evb.gg",
-    "nixle.us",
-    "hipaachat.com",
-    "idvsolutions.com"
-    ]
+domains =[]
 
 #Used for pawned api
 def http_get(url):
@@ -51,6 +44,10 @@ def http_get(url):
 def breached_domains(s, endpoint, sumo_source_created, sumo_source_link):
     print "CHECKING DOMAINS"
     print "----------------"
+    with open('sites_to_be_checked.txt',r) as f:
+	    for line in f.readlines():
+		    line = line.strip()
+		    domain.append(line)
     for domain in domains:
     	print "Checking domain %s ...\n" %(domain)
    	url = "https://haveibeenpwned.com/api/v2/breaches" + "?domain=" + domain.lower()
