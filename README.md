@@ -9,6 +9,6 @@ Pre-requisite:
 2. Account in Sumo Logic with access ID and key
 
 Usage: 
-1. Fill out Settings.ini
+1. Fill out settings.ini
 2. (Optional) Get a list of websites to be checked and paste it in sites_to_be_checked.txt file
 2. Run `python main.py`
