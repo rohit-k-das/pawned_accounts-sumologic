@@ -40,7 +40,7 @@ def revoke_onelogin_token(onelogin_token,authorized):
 def mail_id(onelogin_token,fobj,file_previously_present):
     #Load all emails to a list
     if file_previously_present:
-	email_list = fobj.read().split()
+	email_list = fobj.read().split('\n')
     else:
         email_list = []
 
